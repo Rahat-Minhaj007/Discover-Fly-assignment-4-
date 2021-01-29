@@ -10,16 +10,30 @@ firstBtn.addEventListener('click',function(){
 
     const fPerTicketPrice = 150;
     const fClassTotalPrice = increasingTicketAmount * fPerTicketPrice;
-    console.log(fClassTotalPrice);
+    
 
 
     const subtotal = document.getElementById("subtotal").innerText;
     var subtotalPrice = parseInt(subtotal);
     subtotalPrice=subtotalPrice+150;
-    console.log(subtotalPrice);
     document.getElementById("subtotal").innerText=subtotalPrice;
 
+    const tax = document.getElementById("tax").innerText;
+    var taxCost = parseInt (tax);
+    taxCost=(10/100)*subtotalPrice;
+    document.getElementById("tax").innerText=taxCost;
+
+    const total = document.getElementById("total").innerText;
+    var totalCost = parseInt (total);
+    totalCost= subtotalPrice+taxCost ;
+    document.getElementById("total").innerText=totalCost;
+
 })
+
+// **********************************FirstClass ticket Amount Minus(-)***************************************
+
+
+
 
 
 
