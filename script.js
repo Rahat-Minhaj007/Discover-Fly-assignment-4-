@@ -9,22 +9,22 @@ firstBtnPlus.addEventListener('click', function () {
     const increasingTicketAmount = firstClassTicketAmountInt + 1;
     document.getElementById("firstClassTicketAmount").value = increasingTicketAmount;
     // total ticket and per ticket price multiply
-    const fPerTicketPrice = 150;
-    const fClassTotalPrice = increasingTicketAmount * fPerTicketPrice;
-    // assign first class ticket price in subtotal
+    // const fPerTicketPrice = 150;
+    // const fClassTotalPrice = increasingTicketAmount * fPerTicketPrice;
+    // // assign first class ticket price in subtotal
     const subtotal = document.getElementById("subtotal").innerText;
     var subtotalPrice = parseInt(subtotal);
-    subtotalPrice = fClassTotalPrice;
-    document.getElementById("subtotal").innerText = subtotalPrice;
+    subtotalPriceFinal =subtotalPrice+150 ;
+    document.getElementById("subtotal").innerText = subtotalPriceFinal;
     // calculating the tax of per ticket
     const tax = document.getElementById("tax").innerText;
     var taxCost = parseInt(tax);
-    taxCost = (10 / 100) * subtotalPrice;
+    taxCost = (10 / 100) * subtotalPriceFinal;
     document.getElementById("tax").innerText = taxCost;
     // calculating total price of ticket
     const total = document.getElementById("total").innerText;
     var totalCost = parseInt(total);
-    totalCost = subtotalPrice + taxCost;
+    totalCost = subtotalPriceFinal + taxCost;
     document.getElementById("total").innerText = totalCost;
 
 })
@@ -60,7 +60,40 @@ firstBtnMinus.addEventListener('click', function () {
 
 })
 
-// **********************************FirstClass ticket Amount Plus(+)***************************************
+// **********************************Economy ticket Amount Plus(+)***************************************
+
+const economyBtnPlus = document.getElementById("economyPlus")
+economyBtnPlus.addEventListener('click', function () {
+
+    // increasing ticket amount first class
+    const economyTicketAmount = document.getElementById("economyTicketAmount").value;
+    const economyTicketAmountInt = parseInt(economyTicketAmount);
+    const economyTicketAmountIncreasing = economyTicketAmountInt + 1;
+    document.getElementById("economyTicketAmount").value = economyTicketAmountIncreasing;
+
+    // total ticket and per ticket price multiply
+    const ecoPerTicketPrice = 100;
+    const ecoTotalPrice = economyTicketAmountIncreasing * ecoPerTicketPrice;
+    console.log(ecoTotalPrice);
+     // assign economy ticket price in subtotal
+     const subtotal = document.getElementById("subtotal").innerText;
+    var subtotalPrice = parseInt(subtotal);
+    subtotalPriceFinal =subtotalPrice+100 ; 
+    document.getElementById("subtotal").innerText = subtotalPriceFinal;
+     // calculating the tax of per ticket
+     const tax = document.getElementById("tax").innerText;
+     var taxCost = parseInt(tax);
+     taxCost = (10 / 100) * subtotalPriceFinal;
+     document.getElementById("tax").innerText = taxCost;
+      // calculating total price of ticket
+    const total = document.getElementById("total").innerText;
+    var totalCost = parseInt(total);
+    totalCost = subtotalPriceFinal + taxCost;
+    document.getElementById("total").innerText = totalCost;
+
+
+
+})
 
 
 
