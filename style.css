@@ -12,6 +12,7 @@ body{
     background-position: center center;
     background-attachment: scroll;
     background-size: cover;
+    background-size: auto;
 }
 
 nav{
@@ -23,6 +24,7 @@ nav{
     width: 1200px;
     max-width: 85%;
     margin: 0 auto;
+   
 }
 nav ul{
     display: flex;
@@ -43,6 +45,7 @@ nav ul li a:hover, a.active{
     grid-template-columns: 2fr 3fr;
     gap: 70px;
     align-items: center;
+   
 }
 .booking-form{
     background-color: #fff;
@@ -50,6 +53,7 @@ nav ul li a:hover, a.active{
     padding: 25px;
     border-radius: 5px;
     float: left;
+    
 }
 .booking-form h3{
     margin: 10px 0px;
@@ -122,11 +126,15 @@ nav ul li a:hover, a.active{
 }
 .btnStyle{
     border: none;
-    font-size: 20px;
+    font-size: 85%;
     margin-left: 5px;
-    background-color: whitesmoke;
-    border-radius: 2px;
+    background-color: aliceblue;
+    border-radius: 5px;
+
 }
 .btnStyle :hover{
-    background-color: rgb(0, 225, 255);
+    background-color: rgb(146, 146, 146);
+}
+#newAdded{
+    display: none;
 }
