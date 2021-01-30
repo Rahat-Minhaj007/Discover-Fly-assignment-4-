@@ -110,12 +110,14 @@ ecoBtnMinus.addEventListener('click', function () {
     }
 })
 
-// Bonus part Book Now
+// Bonus part Book Now 
 
 const bookNowTicket = document.getElementById("bookNow")
 bookNowTicket.addEventListener('click', function () {
-    const mainPartVanish = document.getElementById("main");
+    const mainPartVanish = document.getElementById("mainFrom");
     mainPartVanish.style.display = "none";
+    const mainTextPartVanish = document.getElementById("mainText");
+    mainTextPartVanish.style.display = "none";
 
     const newComer = document.getElementById("newAdded");
     newComer.style.display = "block";
