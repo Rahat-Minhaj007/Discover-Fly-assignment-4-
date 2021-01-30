@@ -1,13 +1,20 @@
+// Using Function For Reduce Duplications
+
+function plusButton(id) {
+    const TicketAmount = document.getElementById(id).value;
+    const TicketAmountInt = parseInt(TicketAmount);
+    const increasingTicketAmount = TicketAmountInt + 1;
+    document.getElementById(id).value = increasingTicketAmount;
+    return document.getElementById(id).value;
+}
+
 // **********************************FirstClass ticket Amount Plus(+)***************************************
 
 const firstBtnPlus = document.getElementById("firstClassPlus")
 firstBtnPlus.addEventListener('click', function () {
 
     // increasing ticket amount first class
-    const firstClassTicketAmount = document.getElementById("firstClassTicketAmount").value;
-    const firstClassTicketAmountInt = parseInt(firstClassTicketAmount);
-    const increasingTicketAmount = firstClassTicketAmountInt + 1;
-    document.getElementById("firstClassTicketAmount").value = increasingTicketAmount;
+    plusButton("firstClassTicketAmount");
     // assign first class ticket price in subtotal
     const subtotal = document.getElementById("subtotal").innerText;
     var subtotalPrice = parseInt(subtotal);
@@ -61,10 +68,9 @@ firstBtnMinus.addEventListener('click', function () {
 const economyBtnPlus = document.getElementById("economyPlus")
 economyBtnPlus.addEventListener('click', function () {
     // increasing ticket amount first class
-    const economyTicketAmount = document.getElementById("economyTicketAmount").value;
-    const economyTicketAmountInt = parseInt(economyTicketAmount);
-    const economyTicketAmountIncreasing = economyTicketAmountInt + 1;
-    document.getElementById("economyTicketAmount").value = economyTicketAmountIncreasing;
+
+    plusButton("economyTicketAmount");
+
     // assign economy ticket price in subtotal
     const subtotal = document.getElementById("subtotal").innerText;
     var subtotalPrice = parseInt(subtotal);
@@ -114,20 +120,23 @@ ecoBtnMinus.addEventListener('click', function () {
 
 const bookNowTicket = document.getElementById("bookNow")
 bookNowTicket.addEventListener('click', function () {
+
     const mainPartVanish = document.getElementById("mainFrom");
     mainPartVanish.style.display = "none";
+
     const mainTextPartVanish = document.getElementById("mainText");
     mainTextPartVanish.style.display = "none";
 
-    
+
     const newComer = document.getElementById("newAdded");
     newComer.style.display = "block";
-    
-    const finalTotal=document.getElementById('total').innerText;
-    var finalTotalInt=parseInt(finalTotal);
-    var finalTotalCost=finalTotalInt;
+
+    const finalTotal = document.getElementById('total').innerText;
+    var finalTotalInt = parseInt(finalTotal);
+    var finalTotalCost = finalTotalInt;
+
     alert("CONGRATULATIONS SIR, YOUR BOOKING HAS BEEN DONE.HAVE A NICE JOURNEY.YOUR TOTAL BILL IS = $ " + finalTotalCost);
-    
+
 
 })
 
