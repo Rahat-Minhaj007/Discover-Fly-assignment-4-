@@ -88,10 +88,10 @@ economyBtnPlus.addEventListener('click', function () {
 const ecoBtnMinus = document.getElementById("economyMinus")
 ecoBtnMinus.addEventListener('click', function () {
     // decreasing ticket amount from economy class
-    const firstClassTicketAmount = document.getElementById("economyTicketAmount").value;
-    const firstClassTicketAmountInt = parseInt(firstClassTicketAmount);
-    if (firstClassTicketAmountInt > 0) {
-        document.getElementById("economyTicketAmount").value = firstClassTicketAmountInt - 1;
+    const economyTicketAmount = document.getElementById("economyTicketAmount").value;
+    const economyTicketAmountInt = parseInt(economyTicketAmount);
+    if (economyTicketAmountInt > 0) {
+        document.getElementById("economyTicketAmount").value = economyTicketAmountInt - 1;
         // decreasing subtotal from economy
         const subtotal = document.getElementById("subtotal").innerText;
         var subtotalPrice = parseInt(subtotal);
@@ -119,8 +119,14 @@ bookNowTicket.addEventListener('click', function () {
     const mainTextPartVanish = document.getElementById("mainText");
     mainTextPartVanish.style.display = "none";
 
+    
     const newComer = document.getElementById("newAdded");
     newComer.style.display = "block";
+    
+    const finalTotal=document.getElementById('total').innerText;
+    var finalTotalInt=parseInt(finalTotal);
+    var finalTotalCost=finalTotalInt;
+    alert("CONGRATULATIONS SIR, YOUR BOOKING HAS BEEN DONE.YOUR TOTAL BILL IS = $ " + finalTotalCost ,"HAVE A NICE JOURNEY");
 
 })
 
