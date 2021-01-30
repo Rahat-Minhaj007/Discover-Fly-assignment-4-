@@ -126,7 +126,8 @@ bookNowTicket.addEventListener('click', function () {
     const finalTotal=document.getElementById('total').innerText;
     var finalTotalInt=parseInt(finalTotal);
     var finalTotalCost=finalTotalInt;
-    alert("CONGRATULATIONS SIR, YOUR BOOKING HAS BEEN DONE.YOUR TOTAL BILL IS = $ " + finalTotalCost ,"HAVE A NICE JOURNEY");
+    alert("CONGRATULATIONS SIR, YOUR BOOKING HAS BEEN DONE.HAVE A NICE JOURNEY.YOUR TOTAL BILL IS = $ " + finalTotalCost);
+    
 
 })
 
