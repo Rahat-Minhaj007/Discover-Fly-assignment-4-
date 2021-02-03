@@ -7,6 +7,23 @@ function plusButton(id) {
     document.getElementById(id).value = increasingTicketAmount;
     return document.getElementById(id).value;
 }
+function plusTax(id){
+    const tax = document.getElementById(id).innerText;
+    var taxCost = parseInt(tax);
+    taxCost = (10 / 100) * subtotalPriceFinal;
+    document.getElementById(id).innerText = taxCost;
+    return document.getElementById(id).innerText;
+
+}
+
+function totalPrice(id){
+    const total = document.getElementById(id).innerText;
+    var totalCost = parseInt(total);
+    totalCost = subtotalPriceFinal + taxCost;
+    document.getElementById(id).innerText = totalCost;
+    return document.getElementById(id).innerText;
+}
+
 
 // **********************************FirstClass ticket Amount Plus(+)***************************************
 
@@ -21,15 +38,9 @@ firstBtnPlus.addEventListener('click', function () {
     subtotalPriceFinal = subtotalPrice + 150;
     document.getElementById("subtotal").innerText = subtotalPriceFinal;
     // calculating the tax of per ticket
-    const tax = document.getElementById("tax").innerText;
-    var taxCost = parseInt(tax);
-    taxCost = (10 / 100) * subtotalPriceFinal;
-    document.getElementById("tax").innerText = taxCost;
+     taxCost=parseInt(plusTax("tax"));
     // calculating total price of ticket
-    const total = document.getElementById("total").innerText;
-    var totalCost = parseInt(total);
-    totalCost = subtotalPriceFinal + taxCost;
-    document.getElementById("total").innerText = totalCost;
+        totalPrice("total");
 
 })
 
@@ -74,18 +85,12 @@ economyBtnPlus.addEventListener('click', function () {
     // assign economy ticket price in subtotal
     const subtotal = document.getElementById("subtotal").innerText;
     var subtotalPrice = parseInt(subtotal);
-    subtotalPriceFinal = subtotalPrice + 100;
+    subtotalPriceFinal =subtotalPrice+100;
     document.getElementById("subtotal").innerText = subtotalPriceFinal;
     // calculating the tax of per ticket
-    const tax = document.getElementById("tax").innerText;
-    var taxCost = parseInt(tax);
-    taxCost = (10 / 100) * subtotalPriceFinal;
-    document.getElementById("tax").innerText = taxCost;
+    taxCost=parseInt(plusTax("tax"));
     // calculating total price of ticket
-    const total = document.getElementById("total").innerText;
-    var totalCost = parseInt(total);
-    totalCost = subtotalPriceFinal + taxCost;
-    document.getElementById("total").innerText = totalCost;
+    totalPrice("total");
 
 })
 
@@ -134,10 +139,12 @@ bookNowTicket.addEventListener('click', function () {
     const finalTotal = document.getElementById('total').innerText;
     var finalTotalInt = parseInt(finalTotal);
     var finalTotalCost = finalTotalInt;
-
-    alert("CONGRATULATIONS SIR, YOUR BOOKING HAS BEEN DONE.HAVE A NICE JOURNEY.YOUR TOTAL BILL IS = $ " + finalTotalCost);
-
-
+    if(finalTotalCost>0){
+        alert("CONGRATULATIONS SIR, YOUR BOOKING HAS BEEN DONE.HAVE A NICE JOURNEY.YOUR TOTAL BILL IS = $ " + finalTotalCost);
+    }
+    else{
+        alert("SORRY SIR AT FIRST YOU HAVE TO BOOK YOUR TICKET")
+    }
 })
 
 
